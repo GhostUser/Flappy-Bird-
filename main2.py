@@ -8,7 +8,7 @@ SCREENWIDTH = 289
 SCREENHEIGHT = 511
 GROUNDY = SCREENHEIGHT * 0.8
 GAME_SPRITES={}
-SCREEN = pygame.display.set_mode(SCREENWIDTH, SCREENHEIGHT)
+SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 PLAYER = 'A:\\Programming\\Python\\Flappy-Bird-\\pictures\\bird.png'
 BACKGROUND = 'A:\\Programming\\Python\\Flappy-Bird-\\pictures\\background.png'
 PIPE = '\n'
@@ -35,3 +35,24 @@ def WelcomeScreen():
                 SCREEN.blit(GAME_SPRITES['base'], (basex, GROUNDY))    
                 pygame.display.update()
                 FPSCLOCK.tick(FPS)
+
+def Sprites():
+    SCREEN.blit(GAME_SPRITES['background'], (0, 0))
+    SCREEN.blit(GAME_SPRITES['base'], (basex, GROUNDY))
+    SCREEN.blit(GAME_SPRITES['player'], (playerx, playery))
+
+    pygame.display.update()
+    FPSCLOCK.tick(FPS)
+
+if __name__ == "__main__":
+
+    pygame.init()
+    FPSCLOCK = pygame.time.Clock()
+
+    GAME_SPRITES['base'] =pygame.image.load('A:\\Programming\\Python\\flappy\\gallery\\pictures\\base.png').convert_alpha()
+    GAME_SPRITES['background'] = pygame.image.load(BACKGROUND).convert()
+    GAME_SPRITES['player'] = pygame.image.load(PLAYER).convert_alpha()
+
+    while True:
+        WelcomeScreen()
+        Sprites()
