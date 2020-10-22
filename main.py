@@ -12,6 +12,7 @@ class Screen:
     window=pygame.display.set_mode((WIDTH,HEIGHT))
     bg=pygame.image.load('pictures\\background.png')
     bird=pygame.image.load('pictures\\bird.png')
+    platorm=pygame.image.load('pictures\\base.png')
 
 
 class Bird:
@@ -22,6 +23,7 @@ class Bird:
 def bg_win():
     Screen.window.blit(Screen.bg, (0,0))
     Screen.window.blit(Screen.bird, (Screen.WIDTH//2, Screen.HEIGHT//2))
+    Screen.window.blit(Screen.platorm, (0, 4*Screen.HEIGHT//5))
     pygame.display.update()
 
 
