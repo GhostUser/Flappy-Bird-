@@ -9,8 +9,8 @@ SCREENHEIGHT = 511
 GROUNDY = SCREENHEIGHT * 0.8
 GAME_SPRITES={}
 SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
-PLAYER = 'pictures\bird.png'
-BACKGROUND = 'pictures\background.png'
+PLAYER = 'pictures\\bird.png'
+BACKGROUND = 'pictures\\background.png'
 PIPE = '\n'
 
 
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     pygame.init()
     FPSCLOCK = pygame.time.Clock()
 
-    GAME_SPRITES['base'] =pygame.image.load('pictures\base.png').convert_alpha()
+    GAME_SPRITES['base'] =pygame.image.load('pictures\\base.png').convert_alpha()
     GAME_SPRITES['background'] = pygame.image.load(BACKGROUND).convert()
     GAME_SPRITES['player'] = pygame.image.load(PLAYER).convert_alpha()
 
