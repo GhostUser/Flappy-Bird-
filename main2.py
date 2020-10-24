@@ -3,7 +3,7 @@ import pygame
 from pygame.locals import *
 
 # Global variable for the game 
-FPS = 32
+FPS = 42
 SCREENWIDTH = 289
 SCREENHEIGHT = 511
 GROUNDY = SCREENHEIGHT * 0.8
@@ -11,7 +11,8 @@ GAME_SPRITES={}
 SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 PLAYER = 'pictures\\bird.png'
 BACKGROUND = 'pictures\\background.png'
-PIPE = '\n'
+BASE = 'pictures\\base.png'
+PIPE = 'pictures\pipe.png'
 
 
 def WelcomeScreen():
@@ -49,9 +50,27 @@ if __name__ == "__main__":
     pygame.init()
     FPSCLOCK = pygame.time.Clock()
 
-    GAME_SPRITES['base'] =pygame.image.load('pictures\\base.png').convert_alpha()
+    GAME_SPRITES['base'] =pygame.image.load(BASE).convert_alpha()
     GAME_SPRITES['background'] = pygame.image.load(BACKGROUND).convert()
     GAME_SPRITES['player'] = pygame.image.load(PLAYER).convert_alpha()
+    GAME_SPRITES['numbers'] = ( 
+        pygame.image.load('pictures/0.png').convert_alpha(),
+        pygame.image.load('pictures/1.png').convert_alpha(),
+        pygame.image.load('pictures/2.png').convert_alpha(),
+        pygame.image.load('pictures/3.png').convert_alpha(),
+        pygame.image.load('pictures/4.png').convert_alpha(),
+        pygame.image.load('pictures/5.png').convert_alpha(),
+        pygame.image.load('pictures/6.png').convert_alpha(),
+        pygame.image.load('pictures/7.png').convert_alpha(),
+        pygame.image.load('pictures/8.png').convert_alpha(),
+        pygame.image.load('pictures/9.png').convert_alpha(),
+        
+    )
+    GAME_SPRITES['pipe'] = (
+        pygame.transform.rotate(pygame.image.load(PIPE).convert_alpha(),180),
+        pygame.image.load(PIPE).convert_alpha()
+
+    )
 
     while True:
         WelcomeScreen()
