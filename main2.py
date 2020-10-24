@@ -45,6 +45,12 @@ def Sprites():
     pygame.display.update()
     FPSCLOCK.tick(FPS)
 
+def main():
+    score = 0
+    playerx = int(SCREENWIDTH/5)
+    playery = int(SCREENWIDTH/2)
+    basex = 0
+
 if __name__ == "__main__":
 
     pygame.init()
